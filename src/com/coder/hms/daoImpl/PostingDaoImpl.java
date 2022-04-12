@@ -22,7 +22,7 @@ public class PostingDaoImpl implements PostingDAO, TransactionManagement {
 
     public PostingDaoImpl() {
 
-        dataSourceFactory = new DataSourceFactory();
+        dataSourceFactory = DataSourceFactory.getInstance();
         DataSourceFactory.createConnection();
         logging = LoggingEngine.getInstance();
     }

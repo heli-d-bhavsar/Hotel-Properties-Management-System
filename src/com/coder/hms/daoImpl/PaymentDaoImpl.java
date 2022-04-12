@@ -22,7 +22,7 @@ public class PaymentDaoImpl implements PaymentDAO, TransactionManagement {
 
     public PaymentDaoImpl() {
 
-        dataSourceFactory = new DataSourceFactory();
+        dataSourceFactory = DataSourceFactory.getInstance();
         DataSourceFactory.createConnection();
         logging = LoggingEngine.getInstance();
     }

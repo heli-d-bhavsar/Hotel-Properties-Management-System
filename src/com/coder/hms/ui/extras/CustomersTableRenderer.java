@@ -6,7 +6,7 @@ import java.awt.Component;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
 
-public class CustomersTableRenderer extends DefaultTableCellRenderer {
+public class CustomersTableRenderer extends DefaultTableCellRenderer implements TableRenderer {
 
 	/**
 	 * 

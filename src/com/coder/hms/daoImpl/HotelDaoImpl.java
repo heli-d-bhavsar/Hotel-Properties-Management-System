@@ -23,7 +23,7 @@ public class HotelDaoImpl implements HotelDAO, TransactionManagement {
 
     public HotelDaoImpl() {
 
-        dataSourceFactory = new DataSourceFactory();
+        dataSourceFactory = DataSourceFactory.getInstance();
         DataSourceFactory.createConnection();
 
     }

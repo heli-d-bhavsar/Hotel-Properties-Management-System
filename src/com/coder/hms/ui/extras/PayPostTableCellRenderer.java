@@ -6,7 +6,7 @@ import java.awt.Component;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
 
-public class PayPostTableCellRenderer extends DefaultTableCellRenderer {
+public class PayPostTableCellRenderer extends DefaultTableCellRenderer implements TableRenderer {
 
 	/**
 	 * 

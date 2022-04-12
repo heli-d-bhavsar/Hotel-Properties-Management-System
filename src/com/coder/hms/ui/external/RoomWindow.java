@@ -64,9 +64,7 @@ import com.coder.hms.entities.Payment;
 import com.coder.hms.entities.Posting;
 import com.coder.hms.entities.Reservation;
 import com.coder.hms.entities.Room;
-import com.coder.hms.ui.extras.CustomersTableRenderer;
-import com.coder.hms.ui.extras.PayPostTableCellRenderer;
-import com.coder.hms.ui.extras.RoomExternalTableHeaderRenderer;
+import com.coder.hms.ui.extras.*;
 import com.coder.hms.ui.main.Main_AllRooms;
 import com.coder.hms.utils.LoggingEngine;
 import com.toedter.calendar.JDateChooser;
@@ -96,11 +94,12 @@ public class RoomWindow extends JDialog {
 	private final PaymentWindow payWin = new PaymentWindow();
 	private final PostingWindow postWin = new PostingWindow();
 	private final HotelSystemStatusImpl systemStatusImpl = new HotelSystemStatusImpl();
-	private final static CustomersTableRenderer customerTableRenderer = new CustomersTableRenderer();
-	private JButton postingBtn, paymentBtn, saveChangesBtn, checkoutBtn;
+	AbstractFactory tableRenderFactory = new TableRendererFactory();
+	private final CustomersTableRenderer customerTableRenderer = (CustomersTableRenderer) tableRenderFactory.getTableRenderer("CUSTOMERS TABLE");
+    private JButton postingBtn, paymentBtn, saveChangesBtn, checkoutBtn;
 	final static CustomerDetailWindow custWindow = new CustomerDetailWindow();
 	private final String LOGOPATH = "/com/coder/hms/icons/main_logo(128X12).png";
-	private final PayPostTableCellRenderer payPostRenderer = new PayPostTableCellRenderer();
+	private final PayPostTableCellRenderer payPostRenderer = (PayPostTableCellRenderer) tableRenderFactory.getTableRenderer("PAYHOST TABLE");
 	private JFormattedTextField priceField, totalPriceField, balanceField, remainDebtField;
 	private final RoomExternalTableHeaderRenderer THR = new RoomExternalTableHeaderRenderer();
 

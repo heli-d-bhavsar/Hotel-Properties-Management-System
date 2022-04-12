@@ -1,0 +1,483 @@
+@startuml
+
+title __ENTITIES's Class Diagram__\n
+
+  namespace com.coder.hms.entities {
+    class com.coder.hms.entities.Company {
+        - Id : long
+        - activateStatus : boolean
+        - address : String
+        - district : String
+        - email : String
+        - faceColorRgb : int
+        - kind : String
+        - phoneNumber : String
+        - province : String
+        {static} - serialVersionUID : long
+        - taxAdministration : String
+        - taxNumber : String
+        - title : String
+        + Company()
+        + Company()
+        + equals()
+        + getAddress()
+        + getDistrict()
+        + getEmail()
+        + getFaceColorRgb()
+        + getId()
+        + getKind()
+        + getPhoneNumber()
+        + getProvince()
+        + getTaxAdministration()
+        + getTaxNumber()
+        + getTitle()
+        + hashCode()
+        + isActivateStatus()
+        + setActivateStatus()
+        + setAddress()
+        + setDistrict()
+        + setEmail()
+        + setFaceColor()
+        + setId()
+        + setKind()
+        + setPhoneNumber()
+        + setProvince()
+        + setTaxAdministration()
+        + setTaxNumber()
+        + setTitle()
+        + toString()
+    }
+  }
+  
+
+  namespace com.coder.hms.entities {
+    class com.coder.hms.entities.Currency {
+        - base : Object
+        - date : Object
+        - rates : Object
+        {static} - serialVersionUID : long
+        + Currency()
+        + Currency()
+        + getBase()
+        + getDate()
+        + getRates()
+        + setBase()
+        + setDate()
+        + setRates()
+        + toString()
+    }
+  }
+  
+
+  namespace com.coder.hms.entities {
+    class com.coder.hms.entities.Customer {
+        - Country : String
+        - CustomerId : long
+        - DateOfBirth : Date
+        - Document : String
+        - DocumentNo : String
+        - Email : String
+        - FatherName : String
+        - FirstName : String
+        - Gender : String
+        - LastName : String
+        - MaritalStatus : String
+        - MotherName : String
+        - Phone : String
+        - ReservationId : long
+        {static} - serialVersionUID : long
+        + Customer()
+        + Customer()
+        + getCountry()
+        + getCustomerId()
+        + getDateOfBirth()
+        + getDocument()
+        + getDocumentNo()
+        + getEmail()
+        + getFatherName()
+        + getFirstName()
+        + getGender()
+        + getLastName()
+        + getMaritalStatus()
+        + getMotherName()
+        + getPhone()
+        + getReservationId()
+        + setCountry()
+        + setCustomerId()
+        + setDateOfBirth()
+        + setDocument()
+        + setDocumentNo()
+        + setEmail()
+        + setFatherName()
+        + setFirstName()
+        + setGender()
+        + setLastName()
+        + setMaritalStatus()
+        + setMotherName()
+        + setPhone()
+        + setReservationId()
+        + toString()
+    }
+  }
+  
+
+  namespace com.coder.hms.entities {
+    class com.coder.hms.entities.Hotel {
+        - Address : String
+        - Id : long
+        - Name : String
+        - Owner : String
+        - PhoneNumber : String
+        - RoomCapacity : int
+        - RoomTypes : String
+        - city : String
+        - country : String
+        - picture : String
+        - starCount : int
+        - type : String
+        + Hotel()
+        + Hotel()
+        + getAddress()
+        + getCity()
+        + getCountry()
+        + getId()
+        + getName()
+        + getOwner()
+        + getPhoneNumber()
+        + getPicture()
+        + getRoomCapacity()
+        + getRoomTypes()
+        + getStarCount()
+        + getType()
+        + setAddress()
+        + setCity()
+        + setCountry()
+        + setId()
+        + setName()
+        + setOwner()
+        + setPhoneNumber()
+        + setPicture()
+        + setRoomCapacity()
+        + setRoomTypes()
+        + setStarCount()
+        + setType()
+        + toString()
+    }
+  }
+  
+
+  namespace com.coder.hms.entities {
+    class com.coder.hms.entities.HotelSystemStatus {
+        - Id : long
+        - dateTime : LocalDate
+        - isAuditted : Boolean
+        {static} - serialVersionUID : long
+        + HotelSystemStatus()
+        + HotelSystemStatus()
+        + getDateTime()
+        + getId()
+        + getIsAuditted()
+        + setDateTime()
+        + setId()
+        + setIsAuditted()
+        + toString()
+    }
+  }
+  
+
+  namespace com.coder.hms.entities {
+    class com.coder.hms.entities.Payment {
+        - currency : String
+        - dateTime : String
+        - explanation : String
+        - id : long
+        - paymentType : String
+        - price : String
+        - roomNumber : String
+        {static} - serialVersionUID : long
+        - title : String
+        + Payment()
+        + Payment()
+        + getCurrency()
+        + getDateTime()
+        + getExplanation()
+        + getId()
+        + getPaymentType()
+        + getPrice()
+        + getRoomNumber()
+        + getTitle()
+        + setCurrency()
+        + setDateTime()
+        + setExplanation()
+        + setId()
+        + setPaymentType()
+        + setPrice()
+        + setRoomNumber()
+        + setTitle()
+        + toString()
+    }
+  }
+  
+
+  namespace com.coder.hms.entities {
+    class com.coder.hms.entities.Posting {
+        - Id : long
+        - currency : String
+        - dateTime : String
+        - explanation : String
+        - postType : String
+        - price : String
+        - roomNumber : String
+        {static} - serialVersionUID : long
+        - title : String
+        + Posting()
+        + Posting()
+        + getCurrency()
+        + getDateTime()
+        + getExplanation()
+        + getId()
+        + getPostType()
+        + getPrice()
+        + getRoomNumber()
+        + getTitle()
+        + setCurrency()
+        + setDateTime()
+        + setExplanation()
+        + setId()
+        + setPostType()
+        + setPrice()
+        + setRoomNumber()
+        + setTitle()
+        + toString()
+    }
+  }
+  
+
+  namespace com.coder.hms.entities {
+    class com.coder.hms.entities.ReportObject {
+        - Id : long
+        - agency : String
+        - agencyRefNo : String
+        - balance : String
+        - checkinDate : String
+        - checkoutDate : String
+        - currency : String
+        - groupName : String
+        - hostType : String
+        - paymentStatus : boolean
+        - paymentType : String
+        - price : double
+        - roomType : String
+        - theNumber : String
+        - totalDays : int
+        - type : String
+        - userName : String
+        + ReportObject()
+        + ReportObject()
+        + getAgency()
+        + getAgencyRefNo()
+        + getBalance()
+        + getCheckinDate()
+        + getCheckoutDate()
+        + getCurrency()
+        + getGroupName()
+        + getHostType()
+        + getId()
+        + getPaymentType()
+        + getPrice()
+        + getRoomType()
+        + getTheNumber()
+        + getTotalDays()
+        + getType()
+        + getUserName()
+        + isPaymentStatus()
+        + setAgency()
+        + setAgencyRefNo()
+        + setBalance()
+        + setCheckinDate()
+        + setCheckoutDate()
+        + setCurrency()
+        + setGroupName()
+        + setHostType()
+        + setId()
+        + setPaymentStatus()
+        + setPaymentType()
+        + setPrice()
+        + setRoomType()
+        + setTheNumber()
+        + setTotalDays()
+        + setType()
+        + setUserName()
+        + toString()
+    }
+  }
+  
+
+  namespace com.coder.hms.entities {
+    class com.coder.hms.entities.Reservation {
+        - Id : long
+        - agency : String
+        - agencyRefNo : String
+        - bookStatus : String
+        - checkinDate : String
+        - checkoutDate : String
+        - creditType : String
+        - groupName : String
+        - hostType : String
+        - isCheckedIn : String
+        - note : String
+        - paymentStatus : boolean
+        - personCount : String
+        - referanceNo : String
+        - rentedRoomCurrency : String
+        - rentedRoomNum : String
+        - rentedRoomPrice : String
+        - rentedRoomType : String
+        {static} - serialVersionUID : long
+        - totalDays : int
+        + Reservation()
+        + Reservation()
+        + equals()
+        + getAgency()
+        + getAgencyRefNo()
+        + getBookStatus()
+        + getCheckinDate()
+        + getCheckoutDate()
+        + getCreditType()
+        + getGroupName()
+        + getHostType()
+        + getId()
+        + getIsCheckedIn()
+        + getNote()
+        + getPaymentStatus()
+        + getPersonCount()
+        + getReferanceNo()
+        + getRentedRoomCurrency()
+        + getRentedRoomNum()
+        + getRentedRoomPrice()
+        + getRentedRoomType()
+        + getTotalDays()
+        + hashCode()
+        + setAgency()
+        + setAgencyRefNo()
+        + setBookStatus()
+        + setCheckinDate()
+        + setCheckoutDate()
+        + setCreditType()
+        + setGroupName()
+        + setHostType()
+        + setId()
+        + setIsCheckedIn()
+        + setNote()
+        + setPaymentStatus()
+        + setPersonCount()
+        + setReferanceNo()
+        + setRentedRoomCurrency()
+        + setRentedRoomNum()
+        + setRentedRoomPrice()
+        + setRentedRoomType()
+        + setTotalDays()
+        + toString()
+    }
+  }
+  
+
+  namespace com.coder.hms.entities {
+    class com.coder.hms.entities.Room {
+        - ReservationId : long
+        - balance : String
+        - cleaningStatus : String
+        - currency : String
+        - customerGrupName : String
+        - number : String
+        - personCount : int
+        - price : double
+        - remainingDebt : double
+        {static} - serialVersionUID : long
+        - theRoomId : long
+        - totalPrice : String
+        - type : String
+        - usageStatus : String
+        + Room()
+        + Room()
+        + getBalance()
+        + getCleaningStatus()
+        + getCurrency()
+        + getCustomerGrupName()
+        + getNumber()
+        + getPersonCount()
+        + getPrice()
+        + getRemainingDebt()
+        + getReservationId()
+        + getTheRoomId()
+        + getTotalPrice()
+        + getType()
+        + getUsageStatus()
+        + setBalance()
+        + setCleaningStatus()
+        + setCurrency()
+        + setCustomerGrupName()
+        + setNumber()
+        + setPersonCount()
+        + setPrice()
+        + setRemainingDebt()
+        + setReservationId()
+        + setTheRoomId()
+        + setTotalPrice()
+        + setType()
+        + setUsageStatus()
+        + toString()
+    }
+  }
+  
+
+  namespace com.coder.hms.entities {
+    class com.coder.hms.entities.User {
+        - Email : String
+        - FirstName : String
+        - Id : long
+        - LastName : String
+        - NickName : String
+        - Password : String
+        - Role : String
+        {static} - serialVersionUID : long
+        + User()
+        + User()
+        + getEmail()
+        + getFirstName()
+        + getId()
+        + getLastName()
+        + getNickName()
+        + getPassword()
+        + getRole()
+        + setEmail()
+        + setFirstName()
+        + setId()
+        + setLastName()
+        + setNickName()
+        + setPassword()
+        + setRole()
+        + toString()
+    }
+  }
+  
+
+  com.coder.hms.entities.Company .up.|> java.io.Serializable
+  com.coder.hms.entities.Currency .up.|> java.io.Serializable
+  com.coder.hms.entities.Customer .up.|> java.io.Serializable
+  com.coder.hms.entities.HotelSystemStatus .up.|> java.io.Serializable
+  com.coder.hms.entities.Payment .up.|> java.io.Serializable
+  com.coder.hms.entities.Posting .up.|> java.io.Serializable
+  com.coder.hms.entities.Reservation .up.|> java.io.Serializable
+  com.coder.hms.entities.Room .up.|> java.io.Serializable
+  com.coder.hms.entities.User .up.|> java.io.Serializable
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

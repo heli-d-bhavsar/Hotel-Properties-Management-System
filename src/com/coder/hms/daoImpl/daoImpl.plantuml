@@ -1,0 +1,223 @@
+@startuml
+
+title __DAOIMPL's Class Diagram__\n
+
+  namespace com.coder.hms.dao {
+    namespace mpl {
+      class com.coder.hms.daoImpl.CompanyDaoImpl {
+          {static} - logging : LoggingEngine
+          - session : Session
+          + CompanyDaoImpl()
+          + beginTransactionIfAllowed()
+          + deleteByName()
+          + getAllCompanies()
+          + getCompanyByName()
+          + saveCompany()
+      }
+    }
+  }
+  
+
+  namespace com.coder.hms.dao {
+    namespace mpl {
+      class com.coder.hms.daoImpl.CustomerDaoImpl {
+          {static} - logging : LoggingEngine
+          - session : Session
+          + CustomerDaoImpl()
+          + beginTransactionIfAllowed()
+          + deleteCustomerByReservationId()
+          + findCustomerByDocumentId()
+          + findCustomerByName()
+          + getAllCustomers()
+          + getCustomerByReservId()
+          + getSinlgeCustomerByReservId()
+          + save()
+          + update()
+      }
+    }
+  }
+  
+
+  namespace com.coder.hms.dao {
+    namespace mpl {
+      class com.coder.hms.daoImpl.HotelDaoImpl {
+          - session : Session
+          + HotelDaoImpl()
+          + beginTransactionIfAllowed()
+          + getHotel()
+          + saveHotel()
+      }
+    }
+  }
+  
+
+  namespace com.coder.hms.dao {
+    namespace mpl {
+      class com.coder.hms.daoImpl.HotelSystemStatusImpl {
+          {static} - logging : LoggingEngine
+          - session : Session
+          + HotelSystemStatusImpl()
+          + beginTransactionIfAllowed()
+          + getSystemStatus()
+          + updateSystemStatus()
+      }
+    }
+  }
+  
+
+  namespace com.coder.hms.dao {
+    namespace mpl {
+      class com.coder.hms.daoImpl.PaymentDaoImpl {
+          - session : Session
+          + PaymentDaoImpl()
+          + beginTransactionIfAllowed()
+          + deletePayment()
+          + getAllPaymentsByRoomNumber()
+          + getAllPaymentsForToday()
+          + getEarlyPaymentByRoomNumber()
+          + getLastPayment()
+          + getPaymentById()
+          + getTotalCashDollarForOneDay()
+          + getTotalCashEuroPaymentsForOneDay()
+          + getTotalCashLiraPaymentsForOneDay()
+          + getTotalCashPoundPaymentsForOneDay()
+          + getTotalCreditDollarPaymentsForOneDay()
+          + getTotalCreditEuroPaymentsForOneDay()
+          + getTotalCreditLiraPaymentsForOneDay()
+          + getTotalCreditPoundPaymentsForOneDay()
+          + savePayment()
+      }
+    }
+  }
+  
+
+  namespace com.coder.hms.dao {
+    namespace mpl {
+      class com.coder.hms.daoImpl.PostingDaoImpl {
+          - session : Session
+          + PostingDaoImpl()
+          + beginTransactionIfAllowed()
+          + deletePosting()
+          + getAllPostingsByRoomNumber()
+          + getAllPostingsForToday()
+          + getPostingById()
+          + getTotalCashDollarPostingsForOneDay()
+          + getTotalCashEuroPostingsForOneDay()
+          + getTotalCashLiraPostingsForOneDay()
+          + getTotalCashPoundPostingsForOneDay()
+          + getTotalCreditDollarPostingsForOneDay()
+          + getTotalCreditEuroPostingsForOneDay()
+          + getTotalCreditLiraPostingsForOneDay()
+          + getTotalCreditPoundPostingsForOneDay()
+          + savePosting()
+      }
+    }
+  }
+  
+
+  namespace com.coder.hms.dao {
+    namespace mpl {
+      class com.coder.hms.daoImpl.ReservationDaoImpl {
+          - session : Session
+          + ReservationDaoImpl()
+          + beginTransactionIfAllowed()
+          + deleteReservation()
+          + findReservationByAgencyRefNo()
+          + findReservationById()
+          + findReservationByRefNo()
+          + findSingleReservByThisDate()
+          + getAllReservations()
+          + getGaranteedReservs()
+          + getLastReservation()
+          + getReservListByThisDate()
+          + getReservationBetweenTwoDates()
+          + getReservsAsWaitlist()
+          + saveReservation()
+          + updateReservation()
+      }
+    }
+  }
+  
+
+  namespace com.coder.hms.dao {
+    namespace mpl {
+      class com.coder.hms.daoImpl.RoomDaoImpl {
+          {static} - logging : LoggingEngine
+          - session : Session
+          + RoomDaoImpl()
+          + beginTransactionIfAllowed()
+          + getAllRooms()
+          + getRoomByReservId()
+          + getRoomByRoomNumber()
+          + saveRoom()
+          + setAllRoomsAtClean()
+          + setAllRoomsAtDirty()
+          + setRoomAsDefaultByRoomNumber()
+          + setRoomCheckedOut()
+          + setSingleRoomAsCleanByRoomNumber()
+          + setSingleRoomAsDNDByRoomNumber()
+          + setSingleRoomAsDirtyByRoomNumber()
+          + updateRoom()
+      }
+    }
+  }
+  
+
+  namespace com.coder.hms.dao {
+    namespace mpl {
+      class com.coder.hms.daoImpl.UserDaoImpl {
+          {static} - logging : LoggingEngine
+          - session : Session
+          + UserDaoImpl()
+          + authentication()
+          + beginTransactionIfAllowed()
+          + changePasswordOfUser()
+          + getAllusers()
+          + getUserByEmail()
+          + getUserByName()
+          + saveUser()
+      }
+    }
+  }
+  
+
+  com.coder.hms.daoImpl.CompanyDaoImpl .up.|> com.coder.hms.dao.CompanyDAO
+  com.coder.hms.daoImpl.CompanyDaoImpl .up.|> com.coder.hms.dao.TransactionManagement
+  com.coder.hms.daoImpl.CompanyDaoImpl o-- com.coder.hms.connection.DataSourceFactory : dataSourceFactory
+  com.coder.hms.daoImpl.CustomerDaoImpl .up.|> com.coder.hms.dao.CustomerDAO
+  com.coder.hms.daoImpl.CustomerDaoImpl .up.|> com.coder.hms.dao.TransactionManagement
+  com.coder.hms.daoImpl.CustomerDaoImpl o-- com.coder.hms.connection.DataSourceFactory : dataSourceFactory
+  com.coder.hms.daoImpl.HotelDaoImpl .up.|> com.coder.hms.dao.HotelDAO
+  com.coder.hms.daoImpl.HotelDaoImpl .up.|> com.coder.hms.dao.TransactionManagement
+  com.coder.hms.daoImpl.HotelDaoImpl o-- com.coder.hms.connection.DataSourceFactory : dataSourceFactory
+  com.coder.hms.daoImpl.HotelSystemStatusImpl .up.|> com.coder.hms.dao.HotelSystemStatusDAO
+  com.coder.hms.daoImpl.HotelSystemStatusImpl o-- com.coder.hms.connection.DataSourceFactory : dataSourceFactory
+  com.coder.hms.daoImpl.PaymentDaoImpl .up.|> com.coder.hms.dao.PaymentDAO
+  com.coder.hms.daoImpl.PaymentDaoImpl .up.|> com.coder.hms.dao.TransactionManagement
+  com.coder.hms.daoImpl.PaymentDaoImpl o-- com.coder.hms.connection.DataSourceFactory : dataSourceFactory
+  com.coder.hms.daoImpl.PaymentDaoImpl o-- com.coder.hms.utils.LoggingEngine : logging
+  com.coder.hms.daoImpl.PostingDaoImpl .up.|> com.coder.hms.dao.PostingDAO
+  com.coder.hms.daoImpl.PostingDaoImpl .up.|> com.coder.hms.dao.TransactionManagement
+  com.coder.hms.daoImpl.PostingDaoImpl o-- com.coder.hms.connection.DataSourceFactory : dataSourceFactory
+  com.coder.hms.daoImpl.PostingDaoImpl o-- com.coder.hms.utils.LoggingEngine : logging
+  com.coder.hms.daoImpl.ReservationDaoImpl .up.|> com.coder.hms.dao.ReservationDAO
+  com.coder.hms.daoImpl.ReservationDaoImpl .up.|> com.coder.hms.dao.TransactionManagement
+  com.coder.hms.daoImpl.ReservationDaoImpl o-- com.coder.hms.connection.DataSourceFactory : dataSourceFactory
+  com.coder.hms.daoImpl.ReservationDaoImpl o-- com.coder.hms.utils.LoggingEngine : logging
+  com.coder.hms.daoImpl.RoomDaoImpl .up.|> com.coder.hms.dao.RoomDAO
+  com.coder.hms.daoImpl.RoomDaoImpl .up.|> com.coder.hms.dao.TransactionManagement
+  com.coder.hms.daoImpl.RoomDaoImpl o-- com.coder.hms.connection.DataSourceFactory : dataSourceFactory
+  com.coder.hms.daoImpl.UserDaoImpl .up.|> com.coder.hms.dao.TransactionManagement
+  com.coder.hms.daoImpl.UserDaoImpl .up.|> com.coder.hms.dao.UserDAO
+  com.coder.hms.daoImpl.UserDaoImpl o-- com.coder.hms.connection.DataSourceFactory : dataSourceFactory
+  com.coder.hms.daoImpl.UserDaoImpl o-- com.coder.hms.utils.EncryptPassword : passwordEncrypter
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

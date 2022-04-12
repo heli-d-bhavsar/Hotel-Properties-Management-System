@@ -33,9 +33,7 @@ import com.coder.hms.beans.LocaleBean;
 import com.coder.hms.daoImpl.RoomDaoImpl;
 import com.coder.hms.entities.Room;
 import com.coder.hms.ui.external.DialogFrame;
-import com.coder.hms.ui.extras.CleaningRoomTableColumnsMaker;
-import com.coder.hms.ui.extras.CustomTableHeaderRenderer;
-import com.coder.hms.ui.extras.RoomCleaningTableRenderer;
+import com.coder.hms.ui.extras.*;
 import com.coder.hms.utils.ChangeComponentOrientation;
 import com.coder.hms.utils.ResourceControl;
 
@@ -56,7 +54,8 @@ public class Main_RoomCleaning extends JPanel implements ActionListener {
     private final RoomDaoImpl roomDaoImpl = new RoomDaoImpl();
     private ChangeComponentOrientation componentOrientation;
     private CleaningRoomTableColumnsMaker cleaningRoomTableColumn;
-    private final RoomCleaningTableRenderer renderer = new RoomCleaningTableRenderer();
+    AbstractFactory tableRenderFactory = new TableRendererFactory();
+    private final RoomCleaningTableRenderer renderer = (RoomCleaningTableRenderer) tableRenderFactory.getTableRenderer("ROOM CLEANING TABLE");
     private final String[] columnNames = new String[]{"ROOM NUMBER", "ROOM TYPE", "CLEANING STATUS"};
     private final DefaultTableModel model = new DefaultTableModel(columnNames, 0);
     private JButton btnCleanSelected, btnCleanAll, btnPollute, btnPolluteAll, btnSetAsDnd;

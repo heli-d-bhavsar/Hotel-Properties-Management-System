@@ -42,8 +42,10 @@ import com.coder.hms.daoImpl.ReservationDaoImpl;
 import com.coder.hms.entities.Customer;
 import com.coder.hms.entities.Reservation;
 import com.coder.hms.ui.external.CustomerDetailWindow;
+import com.coder.hms.ui.extras.AbstractFactory;
 import com.coder.hms.ui.extras.CustomTableHeaderRenderer;
 import com.coder.hms.ui.extras.CustomersTableRenderer;
+import com.coder.hms.ui.extras.TableRendererFactory;
 import com.coder.hms.utils.ChangeComponentOrientation;
 import com.coder.hms.utils.LoggingEngine;
 
@@ -68,7 +70,8 @@ public class Main_CustomersFrame extends JPanel {
     private DefaultTableModel model = new DefaultTableModel(colsName, 0);
     final static CustomerDetailWindow custWindow = new CustomerDetailWindow();
     private final CustomTableHeaderRenderer THR = new CustomTableHeaderRenderer();
-    private final CustomersTableRenderer renderer = new CustomersTableRenderer();
+    AbstractFactory tableRenderFactory = new TableRendererFactory();
+    private final CustomersTableRenderer renderer = (CustomersTableRenderer) tableRenderFactory.getTableRenderer("CUSTOMERS TABLE");
 
     public Main_CustomersFrame() {
 

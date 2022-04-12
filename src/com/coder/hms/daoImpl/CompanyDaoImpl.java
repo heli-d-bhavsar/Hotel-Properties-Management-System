@@ -22,7 +22,7 @@ public class CompanyDaoImpl implements CompanyDAO, TransactionManagement {
 	private DataSourceFactory dataSourceFactory;
 	
 	public CompanyDaoImpl() {
-		dataSourceFactory = new DataSourceFactory();
+		dataSourceFactory = DataSourceFactory.getInstance();
 		DataSourceFactory.createConnection();
         logging = LoggingEngine.getInstance();
 	}
@@ -116,6 +116,5 @@ public class CompanyDaoImpl implements CompanyDAO, TransactionManagement {
 			theSession.getTransaction().rollback();
 			theSession.beginTransaction();
 		}
-		
 	}
 }

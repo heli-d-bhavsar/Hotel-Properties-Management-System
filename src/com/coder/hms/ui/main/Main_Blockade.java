@@ -70,9 +70,7 @@ import com.coder.hms.entities.Reservation;
 import com.coder.hms.entities.Room;
 import com.coder.hms.ui.external.InformationFrame;
 import com.coder.hms.ui.external.UpdateReservationWindow;
-import com.coder.hms.ui.extras.BlockadeTableCellRenderer;
-import com.coder.hms.ui.extras.BlockadeTableHeaderRenderer;
-import com.coder.hms.ui.extras.CustomTableHeaderRenderer;
+import com.coder.hms.ui.extras.*;
 import com.coder.hms.utils.ChangeComponentOrientation;
 import com.coder.hms.utils.LoggingEngine;
 import com.coder.hms.utils.ResourceControl;
@@ -133,10 +131,10 @@ public final class Main_Blockade extends JPanel implements ActionListener {
 
     private final String[] blokajCustomerColsName = {"FIRSTNAME", "LASTNAME"};
     private final DefaultTableModel blokajCustomerModel = new DefaultTableModel(blokajCustomerColsName, 0);
-
+    AbstractFactory tableRenderFactory = new TableRendererFactory();
     private final CustomTableHeaderRenderer THR = new CustomTableHeaderRenderer();
     private final BlockadeTableHeaderRenderer THRC = new BlockadeTableHeaderRenderer();
-    private final BlockadeTableCellRenderer cellRenderer = new BlockadeTableCellRenderer();
+    private final BlockadeTableCellRenderer cellRenderer = (BlockadeTableCellRenderer) tableRenderFactory.getTableRenderer("BLOCKADE TABLE CELL");
 
     /**
      * Create the frame.

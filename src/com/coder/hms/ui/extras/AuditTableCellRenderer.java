@@ -5,7 +5,7 @@ import java.awt.Component;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
 
-public class AuditTableCellRenderer extends DefaultTableCellRenderer {
+public class AuditTableCellRenderer extends DefaultTableCellRenderer implements TableRenderer {
 
 	/**
 	 * 

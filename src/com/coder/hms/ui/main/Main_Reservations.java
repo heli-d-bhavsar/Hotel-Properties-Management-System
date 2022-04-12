@@ -53,8 +53,7 @@ import com.coder.hms.ui.external.AllReservationsWindow;
 import com.coder.hms.ui.external.InformationFrame;
 import com.coder.hms.ui.external.NewReservationWindow;
 import com.coder.hms.ui.external.UpdateReservationWindow;
-import com.coder.hms.ui.extras.CustomTableHeaderRenderer;
-import com.coder.hms.ui.extras.ReservationTableRenderer;
+import com.coder.hms.ui.extras.*;
 import com.coder.hms.utils.ChangeComponentOrientation;
 import com.coder.hms.utils.LoggingEngine;
 import com.coder.hms.utils.ResourceControl;
@@ -91,7 +90,8 @@ public class Main_Reservations extends JPanel {
     private final HotelSystemStatusImpl statusImpl = new HotelSystemStatusImpl();
     private final String[] rezColsName = {"DATE", "CAPASITE ", "FULL ", "EMPTY", "GARANTED", "WAITING"};
     private final CustomTableHeaderRenderer THR = new CustomTableHeaderRenderer();
-    private final ReservationTableRenderer customTCR = new ReservationTableRenderer();
+    AbstractFactory tableRenderFactory = new TableRendererFactory();
+    private final ReservationTableRenderer customTCR = (ReservationTableRenderer) tableRenderFactory.getTableRenderer("RESERVATION TABLE");
 
     public Main_Reservations() {
 

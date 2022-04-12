@@ -9,6 +9,7 @@ import java.awt.Toolkit;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+import com.coder.hms.beans.LocaleBean;
 import org.hibernate.HibernateException;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -29,9 +30,15 @@ import com.coder.hms.ui.external.InformationFrame;
 public class DataSourceFactory {
 
 	private static SessionFactory sessionFactory = null;
-
+	private static DataSourceFactory instance = null;
 	public DataSourceFactory() {}
 
+	public static DataSourceFactory getInstance() {
+		if(instance == null) {
+			instance = new DataSourceFactory();
+		}
+		return instance;
+	}
 	public static void createConnection() {
 		try {
 

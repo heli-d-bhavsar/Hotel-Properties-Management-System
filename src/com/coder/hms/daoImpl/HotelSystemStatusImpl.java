@@ -18,8 +18,8 @@ public class HotelSystemStatusImpl implements HotelSystemStatusDAO {
 	private DataSourceFactory dataSourceFactory;
 	
 	public HotelSystemStatusImpl() {
-		
-		dataSourceFactory = new DataSourceFactory();
+
+		dataSourceFactory = DataSourceFactory.getInstance();
 		DataSourceFactory.createConnection();
                 logging = LoggingEngine.getInstance();
 	}

@@ -28,8 +28,7 @@ public class UserDaoImpl implements UserDAO, TransactionManagement {
     private final EncryptPassword passwordEncrypter;
 
     public UserDaoImpl() {
-
-        dataSourceFactory = new DataSourceFactory();
+        dataSourceFactory = DataSourceFactory.getInstance();
         DataSourceFactory.createConnection();
         passwordEncrypter = new EncryptPassword();
         logging = LoggingEngine.getInstance();

@@ -29,7 +29,7 @@ public class ReservationDaoImpl implements ReservationDAO, TransactionManagement
 
     public ReservationDaoImpl() {
 
-        dataSourceFactory = new DataSourceFactory();
+        dataSourceFactory = DataSourceFactory.getInstance();
         DataSourceFactory.createConnection();
         logging = LoggingEngine.getInstance();
     }

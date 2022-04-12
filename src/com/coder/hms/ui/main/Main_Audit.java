@@ -47,8 +47,7 @@ import com.coder.hms.entities.Reservation;
 import com.coder.hms.entities.Room;
 import com.coder.hms.ui.external.DialogFrame;
 import com.coder.hms.ui.external.NewReservationWindow;
-import com.coder.hms.ui.extras.AuditTableCellRenderer;
-import com.coder.hms.ui.extras.BlockadeTableHeaderRenderer;
+import com.coder.hms.ui.extras.*;
 import com.coder.hms.utils.ChangeComponentOrientation;
 import com.coder.hms.utils.ResourceControl;
 
@@ -81,7 +80,8 @@ public class Main_Audit extends JPanel implements ActionListener {
     private JButton btnUpdate, btnCancel, btnAudit, btnShowRes;
     private final String[] columnNames = {"RESERVATION NO", "GROUP NAME",
         "ROOM NUMBER", "CHECK/IN DATE", "PRICE", "AGENCY"};
-    private final AuditTableCellRenderer renderer = new AuditTableCellRenderer();
+    AbstractFactory tableRenderFactory = new TableRendererFactory();
+    private final AuditTableCellRenderer renderer = (AuditTableCellRenderer) tableRenderFactory.getTableRenderer("ALL RESERVATION");
     private final DefaultTableModel model = new DefaultTableModel(columnNames, 0);
     private final BlockadeTableHeaderRenderer THR = new BlockadeTableHeaderRenderer();
 

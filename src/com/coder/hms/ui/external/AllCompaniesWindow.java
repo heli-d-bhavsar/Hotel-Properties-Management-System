@@ -40,8 +40,10 @@ import javax.swing.table.TableRowSorter;
 
 import com.coder.hms.daoImpl.CompanyDaoImpl;
 import com.coder.hms.entities.Company;
+import com.coder.hms.ui.extras.AbstractFactory;
 import com.coder.hms.ui.extras.CustomTableHeaderRenderer;
 import com.coder.hms.ui.extras.CustomersTableRenderer;
+import com.coder.hms.ui.extras.TableRendererFactory;
 
 
 public class AllCompaniesWindow extends JFrame {
@@ -62,7 +64,8 @@ public class AllCompaniesWindow extends JFrame {
     private JButton deleteBtn, newBtn, editBtn;
 	private static final long serialVersionUID = 1L;
     private TableRowSorter<DefaultTableModel> tableRowSorter;
-    private final CustomersTableRenderer CTR = new CustomersTableRenderer();
+    AbstractFactory tableRenderFactory = new TableRendererFactory();
+    private final CustomersTableRenderer CTR = (CustomersTableRenderer) tableRenderFactory.getTableRenderer("CUSTOMERS TABLE");
     private final CustomTableHeaderRenderer THR = new CustomTableHeaderRenderer();
     final String [] columnNames = {"TITLE", "KIND", "EMAIL", "ADDRESS", "PHONE", "ACTIVATE STATUS"};
     private final DefaultTableModel model = new DefaultTableModel(columnNames, 0);

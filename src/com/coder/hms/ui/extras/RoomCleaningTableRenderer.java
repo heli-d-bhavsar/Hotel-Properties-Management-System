@@ -6,7 +6,7 @@ import java.awt.Component;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
 
-public class RoomCleaningTableRenderer extends DefaultTableCellRenderer {
+public class RoomCleaningTableRenderer extends DefaultTableCellRenderer implements TableRenderer {
 
 	/**
 	 * 

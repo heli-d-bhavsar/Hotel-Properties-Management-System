@@ -6,8 +6,7 @@ import java.awt.Component;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
 
-public class AllreservationRenderer extends DefaultTableCellRenderer {
-
+public class AllreservationRenderer extends DefaultTableCellRenderer implements TableRenderer{
 	/**
 	 * 
 	 */

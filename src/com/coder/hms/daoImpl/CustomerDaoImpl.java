@@ -27,8 +27,8 @@ public class CustomerDaoImpl implements CustomerDAO, TransactionManagement {
 	private DataSourceFactory dataSourceFactory;
 	
 	public CustomerDaoImpl() {
-		
-		dataSourceFactory = new DataSourceFactory();
+
+		dataSourceFactory = DataSourceFactory.getInstance();
 		DataSourceFactory.createConnection();
                 logging = LoggingEngine.getInstance();
 

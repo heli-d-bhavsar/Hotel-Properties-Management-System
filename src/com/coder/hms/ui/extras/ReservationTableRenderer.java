@@ -11,7 +11,7 @@ import java.awt.Component;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
 
-public class ReservationTableRenderer extends DefaultTableCellRenderer {
+public class ReservationTableRenderer extends DefaultTableCellRenderer implements TableRenderer {
 		
 		/**
 	 * 

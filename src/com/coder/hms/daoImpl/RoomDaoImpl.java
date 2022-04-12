@@ -27,7 +27,7 @@ public class RoomDaoImpl implements RoomDAO, TransactionManagement {
 
     public RoomDaoImpl() {
 
-        dataSourceFactory = new DataSourceFactory();
+        dataSourceFactory = DataSourceFactory.getInstance();
         DataSourceFactory.createConnection();
         logging = LoggingEngine.getInstance();
 
